@@ -105,6 +105,7 @@ $
  * Install [Ansible](https://www.ansible.com/).
  * Install [ChefVM](https://github.com/trobrock/chefvm).
  * Make Bash templates less brittle w/ conditionals. (e.g. don't add Chef fu if Chef is not installed).
+ * Clean-up old versions of Terraform after upgrades.
 
 ## License and Authors
 
