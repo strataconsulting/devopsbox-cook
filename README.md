@@ -25,6 +25,7 @@ __Notes:__
  * [build-essential](https://github.com/chef-cookbooks/build-essential)
  * [chef-dk](https://github.com/RoboticCheese/chef-dk-chef)
  * [docker](https://github.com/chef-cookbooks/docker)
+ * [tmux](https://github.com/stevendanna/tmux)
 
 ## Usage
 
@@ -84,7 +85,11 @@ $
 
 ### default
 
- * Aggregator recipe that includes the following recipes:
+Primarily an aggregator recipe that includes all other recipes and:
+
+ * installs OS devtools
+ * installs some useful RPMs
+ * installs TMUX via upstream `tmux` cookbook
 
 ### docker
 

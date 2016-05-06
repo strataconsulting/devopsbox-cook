@@ -70,4 +70,10 @@ describe 'devopsbox::default' do
     its(:stdout) { should match /^CONTAINER ID/ }
   end
 
+  # expect tmux to be installed
+  describe command('/usr/local/bin/tmux -V') do
+    its(:exit_status) { should eq 0 }
+    its(:stdout) { should match /^tmux 2\.2/ }
+  end
+
 end
