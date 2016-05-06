@@ -10,8 +10,10 @@ include_recipe 'build-essential'
 # install useful rpms
 %w(
   bash-completion
+  mc
   mlocate
   git
+  wget
   zip
   unzip
 ).each do |pkg|

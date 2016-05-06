@@ -28,7 +28,7 @@ describe 'devopsbox::default' do
   end
 
   # misc tools packages
-  %w(bash-completion git zip unzip).each do |p|
+  %w(bash-completion git mc zip wget unzip).each do |p|
     describe package(p) do
       it { should be_installed }
     end
