@@ -18,6 +18,7 @@ include_recipe 'build-essential'
   package pkg
 end
 
+include_recipe 'devopsbox::aws'
 include_recipe 'devopsbox::chef-dk'
 include_recipe 'devopsbox::hub'
 include_recipe 'devopsbox::docker'

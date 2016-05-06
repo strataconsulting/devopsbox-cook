@@ -34,8 +34,14 @@ describe 'devopsbox::default' do
     end
   end
 
+  # expect awscli to be installed
+  describe command('/usr/bin/aws ec2 --version') do
+    its(:exit_status) { should eq 0 }
+  end
+
   # expect hub to be installed
   describe command('/usr/local/bin/hub --version') do
+    its(:exit_status) { should eq 0 }
     its(:stdout) { should match /^hub version 2\.[0-9]+\.[0-9]+$/ }
   end
 
