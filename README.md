@@ -22,6 +22,7 @@ __Notes:__
 ### Cookbooks
 
  * [ark](https://github.com/burtlo/ark)
+ * [cloudcli](https://github.com/nickryand/cloudcli-cookbook)
  * [build-essential](https://github.com/chef-cookbooks/build-essential)
  * [chef-dk](https://github.com/RoboticCheese/chef-dk-chef)
  * [docker](https://github.com/chef-cookbooks/docker)
