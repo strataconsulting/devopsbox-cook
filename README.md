@@ -94,6 +94,11 @@ Primarily an aggregator recipe that includes all other recipes and:
 
 ### docker
 
+ * Installs [Go](https://golang.org/) (prerequisite)
+ * Installs [direnv](http://direnv.net/)
+
+### docker
+
  * Installs [Docker Engine](https://www.docker.com/products/docker-engine)
 
 ### hub
@@ -112,7 +117,6 @@ Primarily an aggregator recipe that includes all other recipes and:
  * Install [ChefVM](https://github.com/trobrock/chefvm).
  * Make Bash templates less brittle w/ conditionals. (e.g. don't add Chef fu if Chef is not installed).
  * Clean-up old versions of Terraform after upgrades.
- * Install [direnv](http://direnv.net/)
 
 ## License and Authors
 

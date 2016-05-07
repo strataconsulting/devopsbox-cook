@@ -76,4 +76,10 @@ describe 'devopsbox::default' do
     its(:stdout) { should match /^tmux 2\.2/ }
   end
 
+  # expect direnv to be installed
+  describe command('/usr/local/bin/direnv') do
+    its(:exit_status) { should eq 0 }
+    its(:stdout) { should match /^direnv v2/ }
+  end
+
 end

@@ -20,10 +20,11 @@ include_recipe 'build-essential'
   package pkg
 end
 
+include_recipe 'tmux'
 include_recipe 'devopsbox::aws'
 include_recipe 'devopsbox::chef-dk'
 include_recipe 'devopsbox::hub'
 include_recipe 'devopsbox::docker'
 include_recipe 'devopsbox::bash'
 include_recipe 'devopsbox::terraform'
-include_recipe 'tmux'
+include_recipe 'devopsbox::direnv'
