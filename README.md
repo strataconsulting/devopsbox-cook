@@ -4,11 +4,6 @@
 
 `devopsbox` is a role cookbook that installs an opinionated set of DevOps tools to enable teams to move beyond fighting with their workstations to the blissful business of infrastructure hacking.
 
-__Notes:__
- * This cookbook is very much __work in progress__. It will get better.
- * You're are invited to help make it better, through pull requests and/or GitHub issues.
- * My goal is to open source this once it's providing value and has been approved by InfoSec.
-
 ## Requirements
 
 ### Platforms
