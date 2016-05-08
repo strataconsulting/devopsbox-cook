@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: devopsbox
-# Recipe:: chef-dk
+# Recipe:: direnv
 #
 # Copyright (c) 2016 Strata Consulting, Inc.
 #
@@ -17,30 +17,23 @@
 # limitations under the License.
 #
 
-include_recipe 'chef-dk::default'
+include_recipe 'golang'
 
-# chef plugins
-plugins = %w(
-  dotenv
-  hipchat
-  kitchen-docker
-  kitchen-ec2
-  kitchen-inspec
-  knife-xapi
-  thor-scmversion
-)
-
-plugins.each do |gem|
-  gem_package gem do
-    gem_binary "/opt/chefdk/embedded/bin/gem"
-    options "--no-user-install"
-    action :upgrade
-  end
+remote_file "#{Chef::Config['file_cache_path']}/#{direnv_archive}" do
+  source direnv_url
+  checksum node['direnv']['checksum']
+  notifies :run, 'bash[install_direnv]', :immediately
 end
 
-template '/etc/profile.d/chef-dk.sh' do
-  owner 'root'
-  group 'root'
-  mode 00755
-  action :create
+bash 'install_direnv' do
+  user 'root'
+  cwd Chef::Config['file_cache_path']
+  # root doesn't get gopath here by default because it's not login shell
+  environment 'PATH' => "#{node['go']['install_dir']}/go/bin:#{ENV['PATH']}"
+  code <<-EOH
+      tar -xvzf #{direnv_archive}
+      cd #{direnv_file}
+      make install
+    EOH
+  action :nothing
 end

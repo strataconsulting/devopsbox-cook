@@ -4,11 +4,6 @@
 
 `devopsbox` is a role cookbook that installs an opinionated set of DevOps tools to enable teams to move beyond fighting with their workstations to the blissful business of infrastructure hacking.
 
-__Notes:__
- * This cookbook is very much __work in progress__. It will get better.
- * You're are invited to help make it better, through pull requests and/or GitHub issues.
- * My goal is to open source this once it's providing value and has been approved by InfoSec.
-
 ## Requirements
 
 ### Platforms
@@ -22,9 +17,12 @@ __Notes:__
 ### Cookbooks
 
  * [ark](https://github.com/burtlo/ark)
+ * [cloudcli](https://github.com/nickryand/cloudcli-cookbook)
  * [build-essential](https://github.com/chef-cookbooks/build-essential)
  * [chef-dk](https://github.com/RoboticCheese/chef-dk-chef)
  * [docker](https://github.com/chef-cookbooks/docker)
+ * [golang](https://github.com/NOX73/chef-golang)
+ * [tmux](https://github.com/stevendanna/tmux)
 
 ## Usage
 
@@ -40,12 +38,33 @@ default['chef_dk']['package_url'] = nil
 default['chef_dk']['global_shell_init'] = true
 ```
 
+### direnv
+
+```ruby
+default['direnv']['checksum'] = '918194e91435bf7ebb07705ba901e822dad7a01546e29e285043c3976fee115b'
+default['direnv']['version'] = '2.8.1'
+default['direnv']['base_url'] = 'https://github.com/direnv/direnv/archive'
+```
+
+### golang
+
+```ruby
+default['go']['version'] = '1.6.2'
+```
+
 ### terraform
 
 ```ruby
 default['terraform']['version'] = '0.6.15'
 default['terraform']['zipfile'] = "terraform_#{node['terraform']['version']}_" \
   "#{node['os']}_#{node['terraform']['arch']}.zip"
+```
+
+### tmux
+
+```ruby
+default['tmux']['version'] = '2.2'
+default['tmux']['checksum'] = 'bc28541b64f99929fe8e3ae7a02291263f3c97730781201824c0f05d7c8e19e4'
 ```
 
 ## Recipes
@@ -84,11 +103,20 @@ $
 
 ### default
 
- * Aggregator recipe that includes the following recipes:
+Primarily an aggregator recipe that includes all other recipes and:
+
+ * installs OS devtools.
+ * installs some useful RPMs.
+ * installs TMUX via upstream `tmux` cookbook.
+
+### direnv
+
+ * Installs [Go](https://golang.org/) (prerequisite).
+ * Installs [direnv](http://direnv.net/).
 
 ### docker
 
- * Installs [Docker Engine](https://www.docker.com/products/docker-engine)
+ * Installs [Docker Engine](https://www.docker.com/products/docker-engine).
 
 ### hub
 
@@ -111,6 +139,18 @@ $
 
  * Author: Todd Michael Bushnell (<todd@strataconsulting.com>)
 
-```
-Copyright (c) 2016 Strata Consulting, Inc., All Rights Reserved.
+```text
+Copyright (c) 2016 Strata Consulting, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```

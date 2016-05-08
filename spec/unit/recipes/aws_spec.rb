@@ -2,7 +2,7 @@
 # Cookbook Name:: devopsbox
 # Spec:: default
 #
-# Copyright (c) 2016 Strata Consulting, Inc., All Rights Reserved.
+# Copyright (c) 2016 Strata Consulting, Inc.
 
 require 'spec_helper'
 

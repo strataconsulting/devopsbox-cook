@@ -28,14 +28,20 @@ describe 'devopsbox::default' do
   end
 
   # misc tools packages
-  %w(bash-completion git zip unzip).each do |p|
+  %w(bash-completion git mc zip wget unzip).each do |p|
     describe package(p) do
       it { should be_installed }
     end
   end
 
+  # expect awscli to be installed
+  describe command('/usr/bin/aws ec2 --version') do
+    its(:exit_status) { should eq 0 }
+  end
+
   # expect hub to be installed
   describe command('/usr/local/bin/hub --version') do
+    its(:exit_status) { should eq 0 }
     its(:stdout) { should match /^hub version 2\.[0-9]+\.[0-9]+$/ }
   end
 
@@ -62,6 +68,18 @@ describe 'devopsbox::default' do
   # expect docker to be working
   describe command('docker ps') do
     its(:stdout) { should match /^CONTAINER ID/ }
+  end
+
+  # expect tmux to be installed
+  describe command('/usr/local/bin/tmux -V') do
+    its(:exit_status) { should eq 0 }
+    its(:stdout) { should match /^tmux 2\.2/ }
+  end
+
+  # expect direnv to be installed
+  describe command('/usr/local/bin/direnv') do
+    its(:exit_status) { should eq 0 }
+    its(:stdout) { should match /^direnv v2/ }
   end
 
 end
