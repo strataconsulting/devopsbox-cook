@@ -26,6 +26,7 @@ __Notes:__
  * [build-essential](https://github.com/chef-cookbooks/build-essential)
  * [chef-dk](https://github.com/RoboticCheese/chef-dk-chef)
  * [docker](https://github.com/chef-cookbooks/docker)
+ * [golang](https://github.com/NOX73/chef-golang)
  * [tmux](https://github.com/stevendanna/tmux)
 
 ## Usage
@@ -92,7 +93,7 @@ Primarily an aggregator recipe that includes all other recipes and:
  * installs some useful RPMs
  * installs TMUX via upstream `tmux` cookbook
 
-### docker
+### direnv
 
  * Installs [Go](https://golang.org/) (prerequisite)
  * Installs [direnv](http://direnv.net/)
