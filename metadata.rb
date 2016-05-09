@@ -6,7 +6,7 @@ description 'Builds a DevOps workstation'
 long_description 'Builds a DevOps workstation'
 source_url 'https://github.com/strataconsulting/devopsbox-cook' if respond_to?(:source_url)
 issues_url 'https://github.com/strataconsulting/devopsbox-cook/issues' if respond_to?(:issues_url)
-version '0.1.1'
+version '0.1.2'
 
 depends 'ark'
 depends 'build-essential'
