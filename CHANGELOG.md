@@ -2,13 +2,9 @@
 
 This file is used to list changes made in each version of the devopsbox cookbook.
 
-## Master
+## v0.1.3
 
  * update Terraform version to 0.6.16.
-
-## v0.1.1 (2016-05-02)
-
- * update Terraform version to 0.6.15.
 
 ## v0.1.2 (2016-05-09)
 
@@ -17,3 +13,9 @@ This file is used to list changes made in each version of the devopsbox cookbook
  * install tmux.
  * install mc package.
  * install wget package.
+
+
+## v0.1.1 (2016-05-02)
+
+ * update Terraform version to 0.6.15.
+
