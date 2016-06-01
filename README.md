@@ -55,7 +55,7 @@ default['go']['version'] = '1.6.2'
 ### terraform
 
 ```ruby
-default['terraform']['version'] = '0.6.15'
+default['terraform']['version'] = '0.6.16'
 default['terraform']['zipfile'] = "terraform_#{node['terraform']['version']}_" \
   "#{node['os']}_#{node['terraform']['arch']}.zip"
 ```
