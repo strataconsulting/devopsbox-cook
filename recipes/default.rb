@@ -29,6 +29,7 @@ include_recipe 'build-essential'
   wget
   zip
   unzip
+  ncdu
 ).each do |pkg|
   package pkg
 end
