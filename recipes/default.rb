@@ -20,6 +20,8 @@
 # install os devtools
 include_recipe 'build-essential'
 
+package "epel-release"
+
 # install useful rpms
 %w(
   bash-completion
