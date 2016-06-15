@@ -25,13 +25,13 @@ package "epel-release"
 # install useful rpms
 %w(
   bash-completion
+  git
   mc
   mlocate
-  git
+  ncdu
+  unzip
   wget
   zip
-  unzip
-  ncdu
 ).each do |pkg|
   package pkg
 end
