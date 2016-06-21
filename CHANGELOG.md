@@ -2,7 +2,8 @@
 
 This file is used to list changes made in each version of the devopsbox cookbook.
 
-## Master
+## v0.1.4 (2016-06-21)
+
  * install ncdu package.
 
 ## v0.1.3
