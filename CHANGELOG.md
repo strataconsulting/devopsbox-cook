@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the devopsbox cookbook.
 
+## Master
+ * install ncdu package.
+
 ## v0.1.3
 
  * update Terraform version to 0.6.16.

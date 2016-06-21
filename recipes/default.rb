@@ -20,15 +20,18 @@
 # install os devtools
 include_recipe 'build-essential'
 
+package "epel-release"
+
 # install useful rpms
 %w(
   bash-completion
+  git
   mc
   mlocate
-  git
+  ncdu
+  unzip
   wget
   zip
-  unzip
 ).each do |pkg|
   package pkg
 end
