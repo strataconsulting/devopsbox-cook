@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the devopsbox cookbook.
 
+## v0.1.5 (TBD)
+  * install packer 0.10.1
+  * update Terraform cookbook to 0.5.0
+  * fix chef-dk test
+
 ## v0.1.4 (2016-06-21)
 
  * install ncdu package.

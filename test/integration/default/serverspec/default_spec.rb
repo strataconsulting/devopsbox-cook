@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'devopsbox::default' do
   # expect chefdk components to be installed
   describe command('chef --version') do
-    its(:stdout) { should match /^Chef Development Kit Version: 0\.14\.[0-9]+$/ }
+    its(:stdout) { should match /^Chef Development Kit Version: 0\.[0-9]+\.[0-9]+$/ }
     its(:stdout) { should match /^chef-client version: 12\.[0-9]+\.[0-9]+$/ }
     its(:stdout) { should match /^berks version: 4\.[0-9]+\.[0-9]+$/ }
     its(:stdout) { should match /^kitchen version: 1\.[0-9]+\.[0-9]+$/ }
@@ -12,6 +12,11 @@ describe 'devopsbox::default' do
   # expect terraform to be installed
   describe command('/usr/local/bin/terraform --version') do
     its(:stdout) { should match /^Terraform v0\.6\.16.*$/ }
+  end
+
+  # expect packer to be installed
+  describe command('/usr/local/bin/packer version') do
+    its(:stdout) { should match /^Packer v0\.10\.1.*$/ }
   end
 
   # expect chefdk smoke test to work
