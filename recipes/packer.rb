@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: devopsbox
-# Recipe:: default
+# Recipe:: packer
 #
 # Copyright (c) 2016 Strata Consulting, Inc.
 #
@@ -17,31 +17,5 @@
 # limitations under the License.
 #
 
-# install os devtools
-include_recipe 'build-essential'
+include_recipe 'packer::default'
 
-package "epel-release"
-
-# install useful rpms
-%w(
-  bash-completion
-  git
-  mc
-  mlocate
-  ncdu
-  unzip
-  wget
-  zip
-).each do |pkg|
-  package pkg
-end
-
-include_recipe 'tmux'
-include_recipe 'devopsbox::aws'
-include_recipe 'devopsbox::chef-dk'
-include_recipe 'devopsbox::hub'
-include_recipe 'devopsbox::docker'
-include_recipe 'devopsbox::bash'
-include_recipe 'devopsbox::terraform'
-include_recipe 'devopsbox::direnv'
-include_recipe 'devopsbox::packer'

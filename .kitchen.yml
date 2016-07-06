@@ -1,6 +1,7 @@
 ---
 driver:
   name: vagrant
+  vm_hostname: devopsbox.local
 
 provisioner:
   name: chef_zero

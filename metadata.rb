@@ -6,7 +6,7 @@ description 'Builds a DevOps workstation'
 long_description 'Builds a DevOps workstation'
 source_url 'https://github.com/strataconsulting/devopsbox-cook' if respond_to?(:source_url)
 issues_url 'https://github.com/strataconsulting/devopsbox-cook/issues' if respond_to?(:issues_url)
-version '0.1.4'
+version '0.1.5'
 
 depends 'ark'
 depends 'build-essential'
@@ -14,6 +14,7 @@ depends 'chef-dk'
 depends 'cloudcli'
 depends 'docker'
 depends 'golang'
-depends 'terraform','~> 0.2.1'
+depends 'terraform','~> 0.5.0'
 depends 'tmux'
 depends 'packer','~> 0.4.0'
+
