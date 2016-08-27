@@ -22,6 +22,7 @@
  * [chef-dk](https://github.com/RoboticCheese/chef-dk-chef)
  * [docker](https://github.com/chef-cookbooks/docker)
  * [golang](https://github.com/NOX73/chef-golang)
+ * [terraform](https://github.com/rosstimson/chef-terraform)
  * [tmux](https://github.com/stevendanna/tmux)
 
 ## Usage
@@ -55,7 +56,7 @@ default['go']['version'] = '1.6.2'
 ### terraform
 
 ```ruby
-default['terraform']['version'] = '0.6.16'
+default['terraform']['version'] = '0.7.1'
 default['terraform']['zipfile'] = "terraform_#{node['terraform']['version']}_" \
   "#{node['os']}_#{node['terraform']['arch']}.zip"
 ```
