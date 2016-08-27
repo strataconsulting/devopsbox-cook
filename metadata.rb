@@ -14,7 +14,7 @@ depends 'chef-dk'
 depends 'cloudcli'
 depends 'docker'
 depends 'golang'
-depends 'terraform','~> 0.6.0'
+depends 'terraform'
 depends 'tmux'
 depends 'packer','~> 0.4.0'
 
