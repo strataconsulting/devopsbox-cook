@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the devopsbox cookbook.
 
+## v0.1.7 (2016-08-26)
+ * bump terraform to 0.7.2
+ * remove terraform cookbook constraint (issue #6)
+ * remove ubuntu from kitchen as we don't (yet) support it
+ * doc cleanup
+
 ## v0.1.5 (2016-06-29)
   * install packer 0.10.1
   * update Terraform cookbook to 0.5.0
