@@ -22,6 +22,7 @@
  * [chef-dk](https://github.com/RoboticCheese/chef-dk-chef)
  * [docker](https://github.com/chef-cookbooks/docker)
  * [golang](https://github.com/NOX73/chef-golang)
+ * [packer](https://github.com/sit/chef-packer)
  * [terraform](https://github.com/rosstimson/chef-terraform)
  * [tmux](https://github.com/stevendanna/tmux)
 
@@ -124,6 +125,14 @@ Primarily an aggregator recipe that includes all other recipes and:
  * Installs [Hub](https://github.com/github/hub), GitHub's Git command line wrapper.
  * Adds Hub environment helper to `/etc/profile.d`.
  * Configures Bash auto-completion.
+
+### packer
+
+ * Installs Packer
+
+### terraform
+
+ * Installs Terraform
 
 ## Todos & Bugs
 
