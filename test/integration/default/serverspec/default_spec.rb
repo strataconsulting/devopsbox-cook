@@ -11,7 +11,7 @@ describe 'devopsbox::default' do
   
   # expect terraform to be installed
   describe command('/usr/local/bin/terraform --version') do
-    its(:stdout) { should match /^Terraform v0\.7\.*/ }
+    its(:stdout) { should match /^Terraform v0\.7\.2.*/ }
   end
 
   # expect packer to be installed
