@@ -9,6 +9,7 @@
 ### Platforms
 
  * CentOS 7
+ * RedHat 7
 
 ### Chef
 
@@ -148,6 +149,7 @@ Primarily an aggregator recipe that includes all other recipes and:
 ## License and Authors
 
  * Author: Todd Michael Bushnell (<todd@strataconsulting.com>)
+ * Author: Alex Romanov (<alex@strataconsulting.com>)
 
 ```text
 Copyright (c) 2016 Strata Consulting, Inc.

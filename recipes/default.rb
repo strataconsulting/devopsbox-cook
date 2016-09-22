@@ -19,8 +19,7 @@
 
 # install os devtools
 include_recipe 'build-essential'
-
-package "epel-release"
+include_recipe 'yum-epel'
 
 # install useful rpms
 %w(
@@ -34,6 +33,14 @@ package "epel-release"
   zip
 ).each do |pkg|
   package pkg
+end
+# https://github.com/chef-cookbooks/yum/issues/148
+if node['platform'] == 'redhat'
+  execute 'enable rhui-REGION-rhel-server-optional repo' do
+    command 'yum-config-manager --enable rhui-REGION-rhel-server-optional'
+    user 'root'
+    not_if 'yum repolist|grep -c rhui-REGION-rhel-server-optional', user: 'root'
+  end
 end
 
 include_recipe 'tmux'

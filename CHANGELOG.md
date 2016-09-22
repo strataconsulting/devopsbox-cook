@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the devopsbox cookbook.
 
+## v0.2.0 (2016-09-20)
+ * add RedHat7/EC2 support
+
 ## v0.1.7 (2016-08-26)
  * bump terraform to 0.7.2
  * remove terraform cookbook constraint (issue #6)
