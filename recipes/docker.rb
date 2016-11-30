@@ -17,9 +17,11 @@
 # limitations under the License.
 #
 
-docker_service 'default' do
-  #tls false
-  #provider Chef::Provider::DockerService::Sysvinit
-  action [:create, :start]
-  group 'wheel'
+if node['os_version'] !~ /^3\.2\.0.*$/
+  docker_service 'default' do
+    #tls false
+    #provider Chef::Provider::DockerService::Sysvinit
+    action [:create, :start]
+    group 'root'
+  end
 end

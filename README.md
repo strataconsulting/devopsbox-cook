@@ -10,6 +10,7 @@
 
  * CentOS 7
  * RedHat 7
+ * Ubuntu 16.04
 
 ### Chef
 
@@ -17,6 +18,7 @@
 
 ### Cookbooks
 
+ * [apt](https://github.com/chef-cookbooks/apt)
  * [ark](https://github.com/burtlo/ark)
  * [cloudcli](https://github.com/nickryand/cloudcli-cookbook)
  * [build-essential](https://github.com/chef-cookbooks/build-essential)
@@ -68,6 +70,8 @@ default['terraform']['zipfile'] = "terraform_#{node['terraform']['version']}_" \
 ```ruby
 default['tmux']['version'] = '2.2'
 default['tmux']['checksum'] = 'bc28541b64f99929fe8e3ae7a02291263f3c97730781201824c0f05d7c8e19e4'
+default['tmux']['install_method'] = 'source'
+
 ```
 
 ## Recipes

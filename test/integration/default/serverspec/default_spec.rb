@@ -3,9 +3,9 @@ require 'spec_helper'
 describe 'devopsbox::default' do
   # expect chefdk components to be installed
   describe command('chef --version') do
-    its(:stdout) { should match /^Chef Development Kit Version: 0\.[0-9]+\.[0-9]+$/ }
+    its(:stdout) { should match /^Chef Development Kit Version: 1\.[0-9]+\.[0-9]+$/ }
     its(:stdout) { should match /^chef-client version: 12\.[0-9]+\.[0-9]+$/ }
-    its(:stdout) { should match /^berks version: 4\.[0-9]+\.[0-9]+$/ }
+    its(:stdout) { should match /^berks version: 5\.[0-9]+\.[0-9]+$/ }
     its(:stdout) { should match /^kitchen version: 1\.[0-9]+\.[0-9]+$/ }
   end
   
@@ -27,7 +27,14 @@ describe 'devopsbox::default' do
   end
 
   # os development tools
-  %w(kernel-headers kernel-devel gcc make).each do |p|
+  if os[:family] == 'redhat'
+    packages = %w(kernel-headers kernel-devel gcc make)
+  elsif ['debian'].include?(os[:family])
+    packages = %w(autoconf binutils-doc bison build-essential flex gettext ncurses-dev)
+  else
+    packages = %w(make gcc)
+  end
+  packages.each do |p|
     describe package(p) do
       it { should be_installed }
     end
@@ -45,7 +52,12 @@ describe 'devopsbox::default' do
   end
 
   # expect awscli to be installed
-  describe command('/usr/bin/aws ec2 --version') do
+  if os[:family] == 'redhat'
+    awscli = '/usr/bin/aws ec2 --version'
+  elsif
+    awcli = '/usr/local/bin/aws ec2 --version'
+  end
+  describe command(awscli) do
     its(:exit_status) { should eq 0 }
   end
 

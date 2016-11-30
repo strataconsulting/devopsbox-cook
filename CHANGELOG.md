@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the devopsbox cookbook.
 
+## master
+ * Add Ubuntu 16 support
+ * Add .kitchen.vagrant.yml file for local virtual box tests
+
 ## v0.2.0 (2016-09-20)
  * add RedHat7/EC2 support
 
