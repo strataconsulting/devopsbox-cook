@@ -18,8 +18,12 @@
 #
 
 # install os devtools
+if node['platform_family'] == 'rhel'
+  include_recipe 'yum-epel'
+else
+  include_recipe 'apt'
+end
 include_recipe 'build-essential'
-include_recipe 'yum-epel'
 
 # install useful rpms
 %w(

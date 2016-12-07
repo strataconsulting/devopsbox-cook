@@ -9,6 +9,7 @@ issues_url 'https://github.com/strataconsulting/devopsbox-cook/issues' if respon
 version '0.2.0'
 
 depends 'ark'
+depends 'apt'
 depends 'build-essential'
 depends 'chef-dk'
 depends 'cloudcli'
@@ -16,6 +17,6 @@ depends 'docker'
 depends 'golang'
 depends 'terraform'
 depends 'tmux'
-depends 'packer', '~> 0.4.0'
+depends 'packer', '~> 0.4.2'
 depends 'yum-epel'
 
