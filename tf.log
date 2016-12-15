@@ -1,0 +1,8 @@
+2016/12/15 16:41:01 [INFO] Terraform version: 0.7.2  0985f39e992f64c5486068e9ab6cde2c8316c65a
+2016/12/15 16:41:01 [INFO] CLI args: []string{"/usr/local/terraform-0.7.2/terraform", "version"}
+2016/12/15 16:41:01 [DEBUG] Detected home directory from env var: /users/home/aromanov
+2016/12/15 16:41:01 [DEBUG] Detected home directory from env var: /users/home/aromanov
+2016/12/15 16:41:01 [DEBUG] Attempting to open CLI config file: /users/home/aromanov/.terraformrc
+2016/12/15 16:41:01 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2016/12/15 16:41:01 [DEBUG] Detected home directory from env var: /users/home/aromanov
+2016/12/15 16:41:01 [DEBUG] plugin: waiting for all plugin processes to complete...

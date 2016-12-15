@@ -2,7 +2,8 @@
 
 This file is used to list changes made in each version of the devopsbox cookbook.
 
-## master
+## v0.3.0
+ * packer dependency -> 0.5.0
  * Add Ubuntu 16 support
  * Add .kitchen.vagrant.yml file for local virtual box tests
 
